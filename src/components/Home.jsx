@@ -7,8 +7,10 @@ function Home() {
     <>
       <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
+
+
 <div class="container">
-  <a class="navbar-brand" href="index.html">Mohmand Shop<span>.</span></a>
+  <a class="navbar-brand" href="index.html">Mohmand Shop Here is new changes<span>.</span></a>
 
   <button class="navbar-toggler" type="button" data-bs-toggle=	"collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
