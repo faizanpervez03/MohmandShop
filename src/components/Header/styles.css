@@ -1,0 +1,21 @@
+.zamaHeader{
+    background-color: rgb(20, 20, 59);
+    color: white;
+    border-radius: 50px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+ .zamaLink:hover{
+    transform: scale(1.2);
+    transition: all .3s ease;
+    border-bottom: 4px solid #f9bf29;
+    
+
+        
+}
+
+
+
+
+

@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-
 /* my own changes */
-
 .carousel-indicators {
   display: none;
 }
@@ -399,6 +397,8 @@ a.more {
 
 .why-choose-section {
   padding: 7rem 0;
+  
+
 }
 
 .why-choose-section .img-wrap {
@@ -462,9 +462,9 @@ a.more {
 .we-help-section .imgs-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[27];
+  /* -ms-grid-columns: (1fr)[27]; */
   grid-template-columns: repeat(27, 1fr);
-  position: relative;
+  /* position: relative; */
 }
 
 .we-help-section .imgs-grid:before {
