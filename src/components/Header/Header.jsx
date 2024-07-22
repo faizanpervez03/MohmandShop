@@ -23,7 +23,7 @@ const Header = () => {
 
                 </div>
                 <div className="hidden md:flex space-x-8" style={{ alignItems: "center" }}>
-                    <Link to="/Home" className="zamaLink text-white text-lg">Home</Link>
+                    <Link to="/" className="zamaLink text-white text-lg">Home</Link>
                     <Link to="/About" className="zamaLink text-white text-lg">About</Link>
                     <Link to="/Shop" className="zamaLink text-white text-lg">Shop</Link>
                     <Link className="zamaLink text-white text-lg">Contact Us</Link>

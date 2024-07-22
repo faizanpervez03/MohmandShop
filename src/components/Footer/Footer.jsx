@@ -13,7 +13,7 @@ const Footer = () => {
             <img src="images/sofa.png" alt="Image" class="img-fluid" />
           </div>
 
-          <div class="row">
+          {/* <div class="row">
             <div class="col-lg-8">
               <div class="subscription-form">
                 <h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid" /></span><span>Subscribe to Newsletter</span></h3>
@@ -34,7 +34,7 @@ const Footer = () => {
 
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div class="row g-5 mb-5">
             <div class="col-lg-6">
