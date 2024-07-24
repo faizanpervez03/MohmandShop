@@ -1,38 +1,45 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../Header/styles.css'
+import '../Header/styles.css';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [cartItems, setCartItems] = useState(2); // Set initial cart items count
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
     return (
-
-
-
-
         <nav className="p-4" style={{ backgroundColor: "#208f89" }}>
             <div className="container mx-auto flex justify-between items-center">
                 <div className="flex items-center">
-                    <Link><span className="text-white font-bold text-3xl">Mohmand Shop.</span></Link>
-
-
+                    <Link to="/"><span className="text-white font-bold text-3xl">Mohmand Shop.</span></Link>
                 </div>
                 <div className="hidden md:flex space-x-8" style={{ alignItems: "center" }}>
                     <Link to="/" className="zamaLink text-white text-lg">Home</Link>
                     <Link to="/About" className="zamaLink text-white text-lg">About</Link>
-                    <Link to="/Shop" className="zamaLink text-white text-lg">Shop</Link>
-                    <Link className="zamaLink text-white text-lg">Contact Us</Link>
-                    {/* 
-                            <Link className='nav-link'><img src="images/user.svg" /></Link>
-                            
-                            <Link className='nav-link'><img src="images/cart.svg" /></Link> */}
-                            
-
+                    <div className="relative group">
+                        <Link to="/Shop" className="zamaLink text-white text-lg flex items-center">
+                            Shop
+                            <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </Link>
+                        <div className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-2 w-40">
+                            <Link to="/Categories" className="block px-4 py-2 hover:bg-gray-100">Categories</Link>
+                            <Link to="/AllProducts" className="block px-4 py-2 hover:bg-gray-100">All Products</Link>
+                        </div>
+                    </div>
+                    <Link to="/Contact" className="zamaLink text-white text-lg">Contact Us</Link>
+                    <Link to="/Cart" className="zamaLink text-white text-lg relative">
+                        <img src="images/cart.svg" alt="Cart" />
+                        {cartItems > 0 && (
+                            <span className="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-red-600 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
+                                {cartItems}
+                            </span>
+                        )}
+                    </Link>
                 </div>
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="text-white">
@@ -49,12 +56,20 @@ const Header = () => {
             <div style={{ transition: "zamaTogle 2s ease-in-out" }}
                 className={`md:hidden duration-${isOpen ? '1000' : '300'} ease-in-out ${isOpen ? 'h-auto' : 'h-0'} overflow-hidden`}
             >
-                <div className="container mx-auto zamaTogle" >
+                <div className="container mx-auto zamaTogle">
                     <div className="flex flex-col items-center mt-4 space-y-4">
-                        <Link to="/Home" className="text-white">Home</Link>
+                        <Link to="/" className="text-white">Home</Link>
                         <Link to="/About" className="text-white">About</Link>
                         <Link to="/Shop" className="text-white">Shop</Link>
-                        <Link  className="text-white">Contact Us</Link>
+                        <Link to="/Contact" className="text-white">Contact Us</Link>
+                        <Link to="/Cart" className="text-white relative">
+                            <img src="images/cart.svg" alt="Cart" />
+                            {cartItems > 0 && (
+                                <span className="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-red-600 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
+                                    {cartItems}
+                                </span>
+                            )}
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -63,75 +78,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// -------------------------------------------------------------
-// import React from 'react'
-// import { Link } from 'react-router-dom'
-
-
-// const Header = () => {
-
-//     return (
-//         <>
-
-//             <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark " arial-label="Furni navigation bar">
-
-//                 <div class="container">
-//                     <a class="navbar-brand" href="index.html">Mohmand Shop<span>.</span></a>
-
-//                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-//                         <span class="navbar-toggler-icon"></span>
-//                     </button>
-
-
-{/* <div className="collapse navbar-collapse" id='navbarsFurni'> */ }
-// <ul className='custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0'>
-
-
-//     <li className='nav-item'><Link className='nav-link'>Home</Link></li>
-//     <li className='nav-item'><Link className='nav-link'>About</Link></li>
-//     <li className='nav-item'><Link className='nav-link'>Shop</Link></li>
-//     <li className='nav-item'><Link className='nav-link'>Contact Us</Link></li>
-
-// </ul>
-// <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-//     <li><a class="nav-link" href="#"><img src="images/user.svg" /></a></li>
-//     <li><a class="nav-link" href="cart.html"><img src="images/cart.svg" /></a></li>
-// </ul>
-
-{/* </div> */ }
-
-//                 </div>
-
-//             </nav>
-
-//         </>
-//     )
-// }
-
-// export default Header
-
-// --------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

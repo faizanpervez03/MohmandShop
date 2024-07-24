@@ -4,7 +4,7 @@ import './Style.css'
 
 import { Link } from 'react-router-dom'
 import Hero from '../../components/Hero/Hero.jsx'
-import Testimonial from '../../components/Testimonial/Testimonial.jsx'
+
 
 
 function Home() {
@@ -89,50 +89,7 @@ function Home() {
             <div class="col-lg-6">
               
 
-              {/* <div class="row my-5">
-                <div class="col-6 col-md-6">
-                  <div class="feature">
-                    <div class="icon">
-                      <img src="images/truck.svg" alt="Image" class="imf-fluid" />
-                    </div>
-                    <h3>Fast &amp; Free Shipping</h3>
-                    <p>
-                      Enjoy lightning-fast and complimentary shipping on all your orders! Get your items delivered swiftly and at no extra cost.</p>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-6">
-                  <div class="feature">
-                    <div class="icon">
-                      <img src="images/bag.svg" alt="Image" class="imf-fluid" />
-                    </div>
-                    <h3>Easy to Shop</h3>
-                    <p>Simplify your shopping experience with our user-friendly platform. Enjoy easy browsing, selection, and checkout for a hassle-free shopping journey.</p>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-6">
-                  <div class="feature">
-                    <div class="icon">
-                      <img src="images/support.svg" alt="Image" class="imf-fluid" />
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>We're here for you around the clock! Our dedicated support team is available 24/7 to assist you with any questions or concerns, ensuring you have the help you need when you need it.</p>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-6">
-                  <div class="feature">
-                    <div class="icon">
-                      <img src="images/return.svg" alt="Image" class="imf-fluid" />
-                    </div>
-                    <h3>Hassle Free Returns</h3>
-                    <p>Shop with confidence knowing that returns are on us. Our hassle-free, no-cost return policy ensures your satisfaction is our top priority.</p>
-                  </div>
-                </div>
-
-              </div> */}
-
+             
               <img src="../images/newImg/img-2.png" alt="" />
 
             </div>
@@ -230,66 +187,6 @@ function Home() {
         </div>
       </div>
       {/* <!-- End Popular Product --> */}
-
-      {/* <!-- Start Testimonial Slider --> */}
-      <Testimonial />
-      {/* <!-- End Testimonial Slider --> */}
-
-      {/* <!-- Start Blog Section --> */}
-      {/* <div class="blog-section">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md-6">
-              <h2 class="section-title">Recent Blog</h2>
-            </div>
-            <div class="col-md-6 text-start text-md-end">
-              <a href="blog.html" class="more">View All Posts</a>
-            </div>
-          </div>
-
-          <div class="row">
-
-            <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-              <div class="post-entry">
-                <a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image" class="img-fluid" /></a>
-                <div class="post-content-entry">
-                  <h3><a href="#">First Time Home Owner Ideas</a></h3>
-                  <div class="meta">
-                    <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19, 2021</a></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-              <div class="post-entry">
-                <a href="#" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image" class="img-fluid" /></a>
-                <div class="post-content-entry">
-                  <h3><a href="#">How To Keep Your Furniture Clean</a></h3>
-                  <div class="meta">
-                    <span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-              <div class="post-entry">
-                <a href="#" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image" class="img-fluid" /></a>
-                <div class="post-content-entry">
-                  <h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
-                  <div class="meta">
-                    <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12, 2021</a></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div> */}
-      {/* <!-- End Blog Section -->	 */}
-      
     </>
   )
 }
