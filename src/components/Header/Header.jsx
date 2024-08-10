@@ -12,7 +12,9 @@ const Header = () => {
 
     return (
         <nav className="p-4" style={{ backgroundColor: "#208f89" }}>
+            
             <div className="container mx-auto flex justify-between items-center">
+                
                 <div className="flex items-center">
                     <Link to="/"><span className="text-white font-bold text-3xl">Mohmand Shop.</span></Link>
                 </div>

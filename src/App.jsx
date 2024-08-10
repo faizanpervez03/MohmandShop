@@ -10,6 +10,7 @@ import Cart from './Pages/Cart/Cart'
 import Checkout from './Pages/Checkout/Checkout'
 import Thankyou from './Pages/Thankyou/Thankyou'
 import ProductDetail from './components/ProductDetail/ProductDetail'
+import Product from './components/Product/Product'
 
 
 
@@ -27,9 +28,12 @@ function App() {
         <Route path='/About' element={<About />}></Route>
         <Route path='/Shop' element={<Shop />}></Route>
         <Route path='/ProductDetail' element={<ProductDetail />} ></Route>
+        <Route path='/' element={<Product />}> </Route>
         <Route path='/Cart' element={<Cart />}></Route>
         <Route path='/Checkout' element={<Checkout />}></Route>
         <Route path='/Thankyou' element={<Thankyou />}></Route>
+
+        
 
       </Routes>
       <Footer />
