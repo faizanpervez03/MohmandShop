@@ -12,8 +12,9 @@ function Home() {
   return (
     <>
 
-    <Hero />
+    {/* <Hero /> */}
 
+<Carousel />
 
       {/* <!-- Start Product Section --> */}
       <div class="product-section">
