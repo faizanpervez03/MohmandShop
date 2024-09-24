@@ -43,7 +43,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[200px] md:h-[400px] lg:h-[400px] mx-auto group mt-24">
+    <div className="relative w-full h-[200px] md:h-[400px] lg:h-[400px] mx-auto group mt-32">
       {/* Image container */}
       <div
         className="w-full h-full bg-cover bg-center transition-all duration-500"

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaEnvelope, FaPhone,FaClock  } from "react-icons/fa";
 import '../Header/styles.css';
+
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +13,27 @@ const Header = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 p-4" style={{  background: 'linear-gradient(to right, #0f4c47, #238c83, #49b7aa, #14c9b7)' }}>
+        <>
+         <div
+            style={{ backgroundColor: "rgb(26, 51, 48)" }}
+            className="upper-line text-white p-2 text-center fixed top-0 w-full left-0 z-50 hidden md:flex justify-around"
+        >
+            <div className="flex items-center">
+                <FaEnvelope className="mr-1" />
+                <span>mohmandshop@gmail.com</span>
+            </div>
+            <div className="flex items-center">
+                <FaPhone className="mr-1" />
+                <span>Call us: 03045417033</span>
+            </div>
+            <div className="flex items-center">
+                <FaClock className="mr-1" />
+                <span>Opening time: 8am to 9pm</span>
+            </div>
+        </div>
+
+        <nav className="fixed top-9 left-0 w-full z-50 p-4" style={{  background: 'linear-gradient(to right, #0f4c47, #238c83, #49b7aa, #14c9b7)' }}>
+        
             <div className="container mx-auto flex justify-between items-center">
                 
                 <div className="flex items-center">
@@ -75,6 +97,7 @@ const Header = () => {
                 </div>
             </div>
         </nav>
+        </>
     );
 };
 
