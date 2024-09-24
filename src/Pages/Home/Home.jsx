@@ -12,13 +12,12 @@ function Home() {
   return (
     <>
 
-      {/* <Hero /> */}
-      <Carousel />
+    <Hero />
 
 
       {/* <!-- Start Product Section --> */}
-      <div class="product-section " >
-        <div class="container" >
+      <div class="product-section">
+        <div class="container">
           <div class="row">
 
             {/* <!-- Start Column 1 --> */}
