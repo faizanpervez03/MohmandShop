@@ -11,8 +11,7 @@ const Header = () => {
     };
 
     return (
-        <nav className="p-4" style={{ backgroundColor: "#208f89" }}>
-            
+        <nav className="fixed top-0 left-0 w-full z-50 p-4" style={{  background: 'linear-gradient(to right, #0f4c47, #238c83, #49b7aa, #14c9b7)' }}>
             <div className="container mx-auto flex justify-between items-center">
                 
                 <div className="flex items-center">
