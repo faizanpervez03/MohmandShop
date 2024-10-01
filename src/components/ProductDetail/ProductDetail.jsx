@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './productDetail.css';
 import { Link } from 'react-router-dom';
 
+
 const productData = {
     title: 'WaterProof Watch',
     price: 2400,
@@ -18,6 +19,12 @@ const productData = {
 const ProductDetail = () => {
     const [selectedImage, setSelectedImage] = useState(productData.mainImage);
 
+
+    const [cart, setCart] = useState(20)
+
+    const cartCount = () => {
+        setCart ( +1)
+    }
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 firstDiv">
@@ -78,7 +85,7 @@ const ProductDetail = () => {
 
                         <Link to="/Cart">
 
-                        <button type="button" className="h-14 px-6 py-2 font-semibold rounded-xl text-white zamaBtn"> Add to Cart</button>
+                        <button type="button" className="h-14 px-6 py-2 font-semibold rounded-xl text-white zamaBtn" onClick={cartCount}> Add to Cart {cart}</button>
                         </Link>
                         
                     </div>

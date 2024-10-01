@@ -3,7 +3,8 @@ import './Style.css'
 
 
 import { Link } from 'react-router-dom'
-import Hero from '../../components/Hero/Hero.jsx'
+// import Hero from '../../components/Hero/Hero.jsx'
+import Carousel from '../../components/Carousel/Carousel.jsx'
 
 
 
@@ -11,69 +12,55 @@ function Home() {
   return (
     <>
 
-    <Hero />
+    {/* <Hero /> */}
 
-    
+<Carousel />
+
       {/* <!-- Start Product Section --> */}
       <div class="product-section">
         <div class="container">
           <div class="row">
 
             {/* <!-- Start Column 1 --> */}
-            <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-              <h2 class="mb-4 section-title">Crafted with excellent material.</h2>
-              <p class="mb-4">Exquisitely crafted with premium materials, this product is a testament to quality and attention to detail.. </p>
+            <div class="col-md-12 col-lg-4 mb-5 mb-lg-0 mt-5">
+              <div class="intro-excerpt">
+                <h1 style={{ fontSize: '38px' }}>The Famous <span clsas="d-block">Shop is now online </span></h1>
+                <p class="mb-4">The most unique imported items is now at your doorstep.</p>
+                <p>
 
-              <p><Link to="/Shop" className='btn'>Explore</Link>
-              </p>
+                  <Link to="/Shop" class="btn btn-secondary me-2">Shop Now</Link>
+                  <Link to="/About" class="btn btn-white-outline">Explore</Link>
+
+
+                </p>
+              </div>
             </div>
             {/* <!-- End Column 1 --> */}
 
             {/* <!-- Start Column 2 --> */}
-            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+            <div  className="col-lg-4"> 
 
-              {/* De product la ba cart page jorao kha */}
-                <Link class="product-item" to="/Shop">
-                <img src="images/product-1.png" class="img-fluid product-thumbnail" />
-                <h3 class="product-title">Nordic Chair</h3>
-                <strong class="product-price">Rs18,500.00</strong>
-
-                <span class="icon-cross">
-                  <img src="images/cross.svg" class="img-fluid" />
-                </span>
-                </Link>
             </div>
-            {/* <!-- End Column 2 --> */}
-
-            {/* <!-- Start Column 3 --> */}
-            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-              
-              <Link class="product-item" to="/Shop">
-                <img src="images/product-2.png" class="img-fluid product-thumbnail" />
-                <h3 class="product-title">Kruzo Aero Chair</h3>
-                <strong class="product-price">Rs14,000.00</strong>
-
-                <span class="icon-cross">
-                  <img src="images/cross.svg" class="img-fluid" />
-                </span>
-              
-              </Link>
-            </div>
-            {/* <!-- End Column 3 --> */}
-
-            {/* <!-- Start Column 4 --> */}
-            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-
-              <Link class="product-item" to="/Shop">
-                <img src="images/newImg/img-2.png" width="80%" class="img-fluid product-thumbnail" />
-                <h3 class="product-title">Sport Cycle</h3>
-                <strong class="product-price">Rs80,000.00</strong>
-
-                <span class="icon-cross">
-                  <img src="images/cross.svg" class="img-fluid" />
-                </span>
-            
-              </Link>
+            <div className="col-lg-4">
+              <div id="productCarousel" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img src="images/product-1.png" alt="Product 1" className="d-block w-75"   />
+                  </div>
+                  <div className="carousel-item">
+                    <img src="images/product-2.png" alt="Product 2" className="d-block w-75"  />
+                  </div>
+                  <div className="carousel-item">
+                    <img src="images/product-3.png" alt="Product 3" className="d-block w-75" />
+                  </div>
+                </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                  <span className="carousel-control-prev-icon"></span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                  <span className="carousel-control-next-icon"></span>
+                </button>
+              </div>
             </div>
             {/* <!-- End Column 4 --> */}
 
@@ -81,15 +68,17 @@ function Home() {
         </div>
       </div>
       {/* <!-- End Product Section --> */}
-
+      <hr />
+      <Carousel />
+      <hr />
       {/* <!-- Start Why Choose Us Section --> */}
       <div class="why-choose-section">
         <div class="container">
           <div class="row justify-content-between">
             <div class="col-lg-6">
-              
 
-             
+
+
               <img src="../images/newImg/img-2.png" alt="" />
 
             </div>
@@ -127,7 +116,7 @@ function Home() {
                 <li>From living spaces to bedrooms, we specialize in transforming each area into a statement of modern elegance and relaxation.</li>
               </ul>
               <p>
-                
+
                 <Link className='btn' to="/About">Explore</Link>
               </p>
             </div>
@@ -150,7 +139,7 @@ function Home() {
                   <h3>Flash Fiber</h3>
                   <p>Flash Fiber Wifi: simple, functional, and irresistibly stylish comfort. </p>
                   <p>
-                  
+
                     <Link to="/Shop">Read More</Link>
                   </p>
                 </div>
