@@ -74,7 +74,7 @@ function Shop() {
 
     return (
         <>
-            <div className="hero">
+            <div className="hero mt-10">
                 <div className="container">
                     <div className="row justify-content-between">
                         <div className="col-lg-5">

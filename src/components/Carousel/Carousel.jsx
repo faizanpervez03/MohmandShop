@@ -4,12 +4,16 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Carousel = () => {
   const images = [
+    "/images/banner/megamart.jpg", // Images from the public folder
     "/images/banner/infinix.webp", // Images from the public folder
+    "/images/banner/mobiles.avif", // Images from the public folder
     "/images/banner/infinix1.png",
     "/images/banner/kids_bike.jpg",
+    "/images/banner/lays.jpg",
     "/images/banner/lays2.webp",
+    "/images/banner/accessories.png",
     "/images/banner/makeup.webp",
-    "/images/banner/accessories.webp",
+    
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
