@@ -5,6 +5,7 @@ import './Style.css'
 import { Link } from 'react-router-dom'
 // import Hero from '../../components/Hero/Hero.jsx'
 import Carousel from '../../components/Carousel/Carousel.jsx'
+import ProductCarousel from '../../components/ProductCarousel/ProductCarousel.jsx'
 
 
 
@@ -69,7 +70,7 @@ function Home() {
       </div>
       {/* <!-- End Product Section --> */}
       <hr />
-      <Carousel />
+      <ProductCarousel />
       <hr />
       {/* <!-- Start Why Choose Us Section --> */}
       <div class="why-choose-section">
