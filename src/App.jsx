@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home/Home'
@@ -12,37 +12,34 @@ import Thankyou from './Pages/Thankyou/Thankyou'
 import ProductDetail from './components/ProductDetail/ProductDetail'
 import Product from './components/Product/Product'
 
-
-
-
-
 function App() {
-  const [count, setCount] = useState(0)
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem('cartItems')) || 0
+  );
 
-  return <>
-    <BrowserRouter>
-    <Header />
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        {/* <Route path='/Home' element={<Home />}></Route> */}
-        <Route path='/About' element={<About />}></Route>
-        <Route path='/Shop' element={<Shop />}></Route>
-        <Route path='/ProductDetail' element={<ProductDetail />} ></Route>
-        <Route path='/' element={<Product />}> </Route>
-        <Route path='/Cart' element={<Cart />}></Route>
-        <Route path='/Checkout' element={<Checkout />}></Route>
-        <Route path='/Thankyou' element={<Thankyou />}></Route>
-
-        
-
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+  
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
 
-  </>
+  return (
+    <>
+      <BrowserRouter>
+        <Header cartItems={cartItems} /> 
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/About' element={<About />}></Route>
+          <Route path='/Shop' element={<Shop />}></Route>
+          <Route path='/ProductDetail' element={<ProductDetail setCartItems={setCartItems} />} />
+          <Route path='/Cart' element={<Cart  />}></Route>
+          <Route path='/Checkout' element={<Checkout />}></Route>
+          <Route path='/Thankyou' element={<Thankyou />}></Route>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App
-
-

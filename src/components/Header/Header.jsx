@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { FaEnvelope, FaPhone, FaClock } from "react-icons/fa";
 import '../Header/styles.css';
 
-const Header = () => {
+const Header = ({ cartItems }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [cartItems, setCartItems] = useState(2); // Set initial cart items count
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -71,26 +70,6 @@ const Header = () => {
                                 )}
                             </svg>
                         </button>
-                    </div>
-                </div>
-                <div
-                    className={`md:hidden duration-300 ease-in-out ${isOpen ? 'max-h-screen' : 'max-h-0'} overflow-hidden transition-max-height`}
-                >
-                    <div className="container mx-auto">
-                        <div className="flex flex-col items-center mt-4 space-y-4">
-                            <Link to="/" className="text-white">Home</Link>
-                            <Link to="/About" className="text-white">About</Link>
-                            <Link to="/Shop" className="text-white">Shop</Link>
-                            <Link to="/Contact" className="text-white">Contact Us</Link>
-                            <Link to="/Cart" className="text-white relative">
-                                <img src="images/cart.svg" alt="Cart" />
-                                {cartItems > 0 && (
-                                    <span className="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-red-600 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
-                                        {cartItems}
-                                    </span>
-                                )}
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </nav>

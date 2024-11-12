@@ -96,13 +96,14 @@
 // }
 
 // export default ProductDetail;
+// ============================================================
 
 import React, { useState, useEffect } from 'react';
 import './productDetail.css';
 import { Link } from 'react-router-dom';
 
 const productData = {
-    id: 1,  // Unique ID for product
+    id: 1,  
     title: 'WaterProof Watch',
     price: 2400,
     description: 'Waterproof watch: reliable in any weather condition.',
@@ -115,11 +116,11 @@ const productData = {
     ]
 };
 
-const ProductDetail = () => {
+const ProductDetail = ({ setCartItems }) => {
     const [selectedImage, setSelectedImage] = useState(productData.mainImage);
     const [cart, setCart] = useState([]);
 
-    // Load cart from localStorage when component mounts
+   
     useEffect(() => {
         const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
         setCart(savedCart);  // Set the cart with localStorage data
@@ -133,6 +134,8 @@ const ProductDetail = () => {
     // Function to add product to the cart
     const addToCart = () => {
         let currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        
 
         // Check if product already exists in cart
         const existingProductIndex = currentCart.findIndex(item => item.id === productData.id);
@@ -157,6 +160,8 @@ const ProductDetail = () => {
 
         // Update the cart state to reflect the change
         setCart(currentCart);
+        setCartItems(currentCart.reduce((total, item) => total + item.quantity, 0));
+        
     };
 
     return (
@@ -225,3 +230,8 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
+
+// ============================================
+
+
