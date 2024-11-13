@@ -11,6 +11,7 @@ import Checkout from './Pages/Checkout/Checkout'
 import Thankyou from './Pages/Thankyou/Thankyou'
 import ProductDetail from './components/ProductDetail/ProductDetail'
 import Product from './components/Product/Product'
+import ContactUs from './Pages/ContactUs/ContactUs'
 
 function App() {
   const [cartItems, setCartItems] = useState(
@@ -31,6 +32,7 @@ function App() {
           <Route path='/' element={<Home />}></Route>
           <Route path='/About' element={<About />}></Route>
           <Route path='/Shop' element={<Shop />}></Route>
+          <Route path='/ContactUs' element={<ContactUs />}></Route>
           <Route path='/ProductDetail' element={<ProductDetail setCartItems={setCartItems} />} />
           <Route path='/Cart' element={<Cart  />}></Route>
           <Route path='/Checkout' element={<Checkout />}></Route>

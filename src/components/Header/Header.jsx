@@ -5,10 +5,21 @@ import '../Header/styles.css';
 
 const Header = ({ cartItems }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+        setShowDropdown(false); // Reset dropdown when menu is toggled
     };
+
+    const toggleDropdown = () => {
+        setShowDropdown(!showDropdown);
+    };
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
 
     return (
         <>
@@ -44,13 +55,13 @@ const Header = ({ cartItems }) => {
                                 <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
-                            </Link>
+                            </Link> 
                             <div className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-2 w-40">
                                 <Link to="/Categories" className="block px-4 py-2 hover:bg-gray-100">Categories</Link>
                                 <Link to="/AllProducts" className="block px-4 py-2 hover:bg-gray-100">All Products</Link>
                             </div>
                         </div>
-                        <Link to="/Contact" className="zamaLink text-white text-lg">Contact Us</Link>
+                        <Link to="/ContactUs" className="zamaLink text-white text-lg">Contact Us</Link>
                         <Link to="/Cart" className="zamaLink text-white text-lg relative">
                             <img src="images/cart.svg" alt="Cart" />
                             {cartItems > 0 && (
@@ -65,6 +76,7 @@ const Header = ({ cartItems }) => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 {isOpen ? (
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    
                                 ) : (
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                                 )}
@@ -72,9 +84,42 @@ const Header = ({ cartItems }) => {
                         </button>
                     </div>
                 </div>
+
+           {/* Mobile Menu */}
+           {isOpen && (
+                    <div className="md:hidden mt-4 flex flex-col space-y-4 transition-all duration-500 ease-in-out">
+                        <Link to="/" className="zamaLink text-white text-lg" onClick={closeMenu}>Home</Link>
+                        <Link to="/About" className="zamaLink text-white text-lg" onClick={closeMenu}>About</Link>
+                        <div onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown} className="relative">
+                            <Link to="/Shop" className="zamaLink text-white text-lg flex items-center" onClick={closeMenu}>
+                                Shop
+                                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                            </Link>
+                            {showDropdown && (
+                                <div className="pl-4 flex flex-col space-y-2 bg-white text-black shadow-md mt-2 transition-all duration-300">
+                                    <Link to="/Categories" className="block px-4 py-2" onClick={closeMenu}>Categories</Link>
+                                    <Link to="/AllProducts" className="block px-4 py-2" onClick={closeMenu}>All Products</Link>
+                                </div>
+                            )}
+                        </div>
+                        <Link to="/Contact" className="zamaLink text-white text-lg" onClick={closeMenu}>Contact Us</Link>
+                        <Link to="/Cart" className="zamaLink text-white text-lg relative flex items-center" onClick={closeMenu}>
+                        
+                            <img src="images/cart.svg" alt="Cart" className="mr-2"   />
+                            {cartItems > 0 && (
+                                <span className="bg-red-600 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
+                                    {cartItems}
+                                </span>
+                            )}
+                        </Link>
+                    </div>
+                )}
+
             </nav>
         </>
     );
 };
 
-export default Header;
+export default Header

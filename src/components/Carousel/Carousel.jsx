@@ -12,7 +12,7 @@ const Carousel = () => {
     "/images/banner/lays.jpg",
     "/images/banner/lays2.webp",
     "/images/banner/accessories.png",
-    "/images/banner/makeup.webp",
+    
     
   ];
 

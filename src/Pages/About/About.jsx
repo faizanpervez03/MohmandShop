@@ -13,7 +13,7 @@ const About = () => {
 
 			<div class="hero">
 				<div class="container">
-					<div class="row justify-content-between">
+					<div class="row mt-5 justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
 								<h1 className='text-2xl'>About Us</h1>

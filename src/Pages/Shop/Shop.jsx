@@ -74,9 +74,9 @@ function Shop() {
 
     return (
         <>
-            <div className="hero mt-10">
-                <div className="container">
-                    <div className="row justify-content-between">
+            <div className="hero mt-10  ">
+                <div className="container ">
+                    <div className="row justify-content-between ">
                         <div className="col-lg-5">
                             <div className="intro-excerpt">
                                 <h1 className='text-4xl'>Shop</h1>
