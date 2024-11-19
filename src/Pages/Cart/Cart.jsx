@@ -119,6 +119,7 @@ const Cart = () => {
                                 </button>
                             </td>
                         </tr>
+                        
                     ))}
                 </tbody>
             </table>
@@ -131,7 +132,7 @@ const Cart = () => {
 
                
                 <Link to="/checkout">
-                    <button className="btn btn-primary mt-3" style={{ position: 'absolute', top: '200px', right: '20px' }}>
+                    <button className="btn btn-primary mt-3" style={{ position: 'relative',  right: '20px' }}>
                         Proceed to Checkout
                     </button>
                 </Link>

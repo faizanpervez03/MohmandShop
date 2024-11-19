@@ -58,19 +58,19 @@ const ProductCarousel = () => {
       {/* Product display */}
       <div className="overflow-hidden">
         <div
-          className="flex transition-transform duration-700 ease-in-out"
+          className="flex transition-transform duration-700 ease-in-out "
           style={{ transform: `translateX(-${currentIndex * (100 / visibleProducts)}%)` }}
         >
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex-shrink-0 w-full p-2 flex flex-col items-center"
+              className="flex-shrink-0 w-full p-2 flex flex-col items-center "
               style={{ flexBasis: `${100 / visibleProducts}%` }} // Set width of each item
             >
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-auto max-w-40 max-h-40 rounded-full border border-gray-300"
+                className="w-full h-auto max-w-40 max-h-40 rounded-full border border-gray-300 cursor-pointer"
               />
               <h3 className="text-center mt-2">{product.name}</h3>
             </div>
