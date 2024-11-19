@@ -49,7 +49,7 @@ const ProductCarousel = () => {
       prevIndex === products.length - visibleProducts ? 0 : prevIndex + 1
     );
   };
-// dfkdfjdjf
+
   return (
     <div className="relative p-6">
       {/* Heading */}
