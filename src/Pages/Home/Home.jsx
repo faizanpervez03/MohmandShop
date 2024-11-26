@@ -80,19 +80,22 @@ function Home() {
       {/* <!-- Start Why Choose Us Section --> */}
       <div class="why-choose-section">
         <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-lg-6">
-              <img src="../images/newImg/img-2.png" alt="" />
+          <div class="row justify-content-between ">
+            <div class="col-lg-7">
+              <img src="images/newImg/side-img-2.jpg" alt=""
+              className="object-fit w-full h-100 rounded-2xl"
+              />
             </div>
 
-            <div class="col-lg-5">
-              <div class="img-wrap">
+            <div className="col-lg-5">
+              
                 <img
-                  src="images/why-choose-us-img.jpg"
+                  src="images/newImg/side-img-1.jpg"
                   alt="Image"
                   class="img-fluid"
+                  className="object-fit w-full h-100 rounded-2xl"
                 />
-              </div>
+              
             </div>
           </div>
         </div>
