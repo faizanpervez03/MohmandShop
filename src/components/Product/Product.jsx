@@ -42,6 +42,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./Product.css"
 
+
+
 const Product = ({ ProductDetails }) => {
   const [loading, setLoading] = useState(true);
 
