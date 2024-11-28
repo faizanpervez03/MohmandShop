@@ -11,7 +11,7 @@ const Carousel = () => {
     "/images/banner/kids_bike.jpg",
     "/images/banner/lays.jpg",
     "/images/banner/lays2.webp",
-    "/images/banner/accessories.png",
+    // "/images/banner/accessories.png",
     
     
   ];

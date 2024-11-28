@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+// dlta da useEffect aw useState me product show kolo dapara kre de ka bya product akhwa k nu dam ba akhwa ko
 import "./Style.css";
 
 import { Link } from "react-router-dom";
@@ -7,7 +8,23 @@ import Carousel from "../../components/Carousel/Carousel.jsx";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel.jsx";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
+// ------------------------------------------------------
+import { GetAllProducts } from "../../https/products.http.js";
+import Product from "../../components/Product/Product.jsx";
+// -----------------------------------------------------
+
 function Home() {
+  // -------------------------------------------
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const data = await GetAllProducts();
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
+// ----------------------------------------------
   return (
     <>
       {/* <Hero /> */}
@@ -42,33 +59,30 @@ function Home() {
             {/* <!-- Start Column 2 --> */}
             <div className="col-lg-4"></div>
             <div className="col-lg-4">
-      <div
-        id="productCarousel"
-        className="carousel slide"
-        data-bs-ride="carousel"
-        data-bs-interval="2000"  /* Set interval to 1000ms (1 second) */
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img 
-              src="images/newImg/img-5.png" 
-              alt="Product 1" 
-              className="block mx-auto w-3/4" 
-            />
-          </div>
-          <div className="carousel-item ">
-            <img 
-              src="images/newImg/img-5.png" 
-              alt="Product 1" 
-              className="block mx-auto w-3/4" 
-            />
-          </div>
-          
-        </div>
-
-       
-      </div>
-    </div>
+              <div
+                id="productCarousel"
+                className="carousel slide"
+                data-bs-ride="carousel"
+                data-bs-interval="2000" /* Set interval to 1000ms (1 second) */
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src="images/newImg/img-5.png"
+                      alt="Product 1"
+                      className="block mx-auto w-3/4"
+                    />
+                  </div>
+                  <div className="carousel-item ">
+                    <img
+                      src="images/newImg/img-5.png"
+                      alt="Product 1"
+                      className="block mx-auto w-3/4"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* <!-- End Column 4 --> */}
           </div>
         </div>
@@ -82,31 +96,54 @@ function Home() {
         <div class="container">
           <div class="row justify-content-between ">
             <div class="col-lg-7">
-              <img src="images/newImg/side-img-2.jpg" alt=""
-              className="object-fit w-full h-100 rounded-2xl"
+              <img
+                src="images/newImg/side-img-2.jpg"
+                alt=""
+                className="object-fit w-full h-100 rounded-2xl"
               />
             </div>
 
             <div className="col-lg-5">
-              
-                <img
-                  src="images/newImg/side-img-1.jpg"
-                  alt="Image"
-                  class="img-fluid"
-                  className="object-fit w-full h-100 rounded-2xl"
-                />
-              
+              <img
+                src="images/newImg/side-img-1.jpg"
+                alt="Image"
+                class="img-fluid"
+                className="object-fit w-full h-100 rounded-2xl"
+              />
             </div>
           </div>
         </div>
       </div>
-      {/* <!-- End Why Choose Us Section --> */}
+
+      {/* ---------------------------------------------------------------- */}
+      {/* <!-- Popular dynamic products*/}
+      <div className="container">
+        <div className="untree_co-section product-section before-footer-section">
+          <div className="container">
+            <h2 className="mb-3 text-4xl">Popular Products</h2>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5  object-fit">
+              {products.length > 0 ? (
+                products.map((item) => (
+                  <Product ProductDetails={item} key={item._id} />
+                )) // Use _id or another unique identifier for key
+              ) : (
+                <h1
+                  style={{ color: "#208f89" }}
+                  className="w-screen text-lg font-bold bg-red-200 border border-red-400 rounded-md p-4 shadow-md "
+                >
+                  No Products Available
+                </h1>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+        {/* popular product end  */}
+      {/* ----------------------------------------------------------------------- */}
 
       {/* <!-- Start We Help Section --> */}
       <div class="we-help-section">
-        <div class="container">
-          
-        </div>
+        <div class="container"></div>
       </div>
       {/* <!-- End We Help Section --> */}
 
