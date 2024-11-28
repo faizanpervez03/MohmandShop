@@ -6,12 +6,12 @@ const products = [
   { id: 2, name: "Accessories", image: "/images/newImg/airpod.jpg" },
   { id: 3, name: "Phone & Tablet", image: "/images/newImg/mobile.jpg" },
   { id: 4, name: "Shoes", image: "/images/newImg/shoes-1.png" },
-  { id: 5, name: "Product 5", image: "/images/product-1.png" },
-  { id: 6, name: "Product 6", image: "/images/product-2.png" },
-  { id: 7, name: "Product 7", image: "/images/product-1.png" },
-  { id: 8, name: "Product 8", image: "/images/product-2.png" },
-  { id: 9, name: "Product 9", image: "/images/product-1.png" },
-  { id: 10, name: "Product 10", image: "/images/product-2.png" },
+  { id: 5, name: "Chairs", image: "/images/product-1.png" },
+  { id: 6, name: "Wacthes", image: "/img-1.png" },
+  { id: 7, name: "Rams", image: "/images/newImg/product7.png" },
+  { id: 8, name: "Cycles", image: "/images/newImg/img-3.png" },
+  { id: 9, name: "Electronic", image: "/images/newImg/ElectricInsert.jpg" },
+  { id: 10, name: "Energy Drinks", image: "/images/newImg/sting1.webp" },
 ];
 
 const ProductCarousel = () => {
@@ -51,14 +51,14 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div className="relative p-6">
+    <div className="relative p-6 bg-slate-200">
       {/* Heading */}
       <h2 className="text-xl font-bold mb-4">Top Categories</h2>
 
       {/* Product display */}
       <div className="overflow-hidden">
         <div
-          className="flex transition-transform duration-700 ease-in-out "
+          className="flex transition-transform text-slate-700 font-size font-bold duration-700 ease-in-out "
           style={{ transform: `translateX(-${currentIndex * (100 / visibleProducts)}%)` }}
         >
           {products.map((product) => (
@@ -70,7 +70,7 @@ const ProductCarousel = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-auto max-w-40 max-h-40 rounded-full border border-gray-300 cursor-pointer"
+                className="w-full h-auto max-w-40 max-h-40  rounded-full border border-gray-300 cursor-pointer"
               />
               <h3 className="text-center mt-2">{product.name}</h3>
             </div>

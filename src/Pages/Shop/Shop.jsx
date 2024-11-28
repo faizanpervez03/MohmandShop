@@ -31,7 +31,7 @@ function Shop() {
       <div className="untree_co-section product-section before-footer-section">
         <div className="container">
           <h2 className="mb-5 text-4xl">Useful Items</h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-5">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-5 object-fit">
             {products.length > 0 ? (
               products.map((item) => (
                 <Product ProductDetails={item} key={item._id} />
