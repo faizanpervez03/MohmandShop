@@ -105,56 +105,7 @@ function Home() {
       {/* <!-- Start We Help Section --> */}
       <div class="we-help-section">
         <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-lg-7 mb-5 mb-lg-0">
-              <div class="imgs-grid">
-                <div class="grid grid-1">
-                  <img src="images/img-grid-1.jpg" alt="Untree.co" />
-                </div>
-                <div class="grid grid-2">
-                  <img src="images/img-grid-2.jpg" alt="Untree.co" />
-                </div>
-                <div class="grid grid-3">
-                  <img src="images/img-grid-3.jpg" alt="Untree.co" />
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 ps-lg-5">
-              <h2 class="section-title mb-4">
-                We Help You Make Modern Interior Design
-              </h2>
-              <p>
-                Shine up your space with our modern interior design services!
-                Our team blends style and practicality to create trendy, comfy
-                homes that match your taste. Let us enhance your place with
-                personalized solutions, making every room chic and cozy.
-              </p>
-
-              <ul class="list-unstyled custom-list my-4">
-                <li>
-                  Infuse your space with the latest design trends for a modern
-                  and stylish look.
-                </li>
-                <li>
-                  Our designs prioritize both aesthetics and comfort, ensuring a
-                  practical yet inviting atmosphere.
-                </li>
-                <li>
-                  Tailored solutions that reflect your unique preferences,
-                  making your home a true reflection of your personality.
-                </li>
-                <li>
-                  From living spaces to bedrooms, we specialize in transforming
-                  each area into a statement of modern elegance and relaxation.
-                </li>
-              </ul>
-              <p>
-                <Link className="btn" to="/About">
-                  Explore
-                </Link>
-              </p>
-            </div>
-          </div>
+          
         </div>
       </div>
       {/* <!-- End We Help Section --> */}
@@ -163,7 +114,7 @@ function Home() {
       <div class="popular-product">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="col-12 col-md-6 col-lg-4 mb-2 mb-lg-0">
               <div class="product-item-sm d-flex">
                 <div class="thumbnail">
                   <img
