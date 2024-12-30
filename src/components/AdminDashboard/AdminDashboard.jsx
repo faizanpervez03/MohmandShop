@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const AdminDashboard = () => {
   return (
@@ -17,10 +19,16 @@ const AdminDashboard = () => {
           <hr />
           {/* Navigation Links */}
           <ul className="flex-1 space-y-2 p-4">
-            <li className="hover:bg-gray-700 p-2 rounded">Dashboard</li>
-            <li className="hover:bg-gray-700 p-2 rounded">Products</li>
-            <li className="hover:bg-gray-700 p-2 rounded">Orders</li>
-            <li className="hover:bg-gray-700 p-2 rounded">Customers</li>
+            
+            <li className="hover:bg-gray-300 hover:text-black p-2 rounded">
+              <Link>Products</Link>
+            </li>
+            <li className="hover:bg-gray-300 hover:text-black p-2 rounded">
+            <Link>Orders</Link>
+            </li>
+            <li className="hover:bg-gray-300 hover:text-black p-2 rounded">
+            <Link>Customers</Link>
+            </li>
           </ul>
           <hr />
           {/* Logout Button */}

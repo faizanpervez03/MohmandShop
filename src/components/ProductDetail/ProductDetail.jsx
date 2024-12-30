@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './productDetail.css';
 import { Link, useParams } from 'react-router-dom';
 import { productDetail } from '../../https/products.http';
+import axios from 'axios';
 
 const productData = {
     id: 1,  
@@ -22,8 +23,10 @@ const productData = {
 const ProductDetail = ({ setCartItems }) => {
     const [selectedImage, setSelectedImage] = useState(productData.mainImage);
     const [cart, setCart] = useState([]);
-
+    const path = "http://localhost:3000/api/product"
     
+    //loader me dlta wagsta 
+    const [loader, setLoader] = useState(true)
    
 
     useEffect(() => {
@@ -81,13 +84,20 @@ const ProductDetail = ({ setCartItems }) => {
 
     useEffect  (  () =>  {
         const fetchProductDetail = async () => {
-            const data = productDetail(id)
-            // console.log("data ruing", data);
-            // data.then( (response) => {
-            //     console.log(response);
+            setLoader(true)
+            try {
+                const response = await axios.get(`${path}/product-details/${id}`);
+                console.log("this is response", response);
+
+                // return response; // Assuming that the products array is inside the `data` property
+            } catch (error) {
+                console.error("Error fetching products:", error);
+                return [];
                 
-            // } ) 
-            console.log("hello ooo there");
+            } finally{
+                setLoader(false)
+            }
+            
             
         }
         fetchProductDetail()
@@ -97,8 +107,10 @@ const ProductDetail = ({ setCartItems }) => {
 
 
     return (
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-36 firstDiv">
             <div className="flex flex-col md:flex-row -mx-4">
+                
                 <div className="md:flex-1 px-4">
                     <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
                         <img src={selectedImage} alt="Selected Product" className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4" />
