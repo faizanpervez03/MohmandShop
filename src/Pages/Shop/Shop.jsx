@@ -40,7 +40,7 @@ function Shop() {
               
                 <h1
                 style={{ color: "#208f89" }}
-                className="w-screen text-lg font-bold bg-red-200 border border-red-400 rounded-md p-4 shadow-md "
+                className="w-96 text-lg font-bold bg-red-200 border border-red-400 rounded-md p-4 shadow-md "
               >
                 No Products Available
               </h1>

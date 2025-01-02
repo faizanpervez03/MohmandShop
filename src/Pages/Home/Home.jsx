@@ -121,7 +121,7 @@ function Home() {
         <div className="untree_co-section product-section before-footer-section">
           <div className="container">
             <h2 className="mb-3 text-4xl">Popular Products</h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5  object-fit">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5  object-fit  ">
               {products.length > 0 ? (
                 products.map((item) => (
                   <Product ProductDetails={item} key={item._id} />
@@ -129,7 +129,7 @@ function Home() {
               ) : (
                 <h1
                   style={{ color: "#208f89" }}
-                  className="w-screen text-lg font-bold bg-red-200 border border-red-400 rounded-md p-4 shadow-md "
+                  className="w-96 text-lg font-bold bg-red-200 border border-red-400 rounded-md p-4 shadow-md  "
                 >
                   No Products Available
                 </h1>
