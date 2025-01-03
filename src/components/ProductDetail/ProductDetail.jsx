@@ -3,6 +3,8 @@ import './productDetail.css';
 import { Link, useParams } from 'react-router-dom';
 import { productDetail } from '../../https/products.http';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../store/slices/cartSlice';
 
 const productData = {
     id: 1,  
@@ -25,6 +27,8 @@ const ProductDetail = ({ setCartItems }) => {
     const [cart, setCart] = useState([]);
     const path = "http://localhost:3000/api/product"
     
+    const dispatch = useDispatch()
+
     //loader me dlta wagsta 
     const [loader, setLoader] = useState(true)
    
@@ -41,8 +45,9 @@ const ProductDetail = ({ setCartItems }) => {
     };
 
     // Function to add product to the cart
-    const addToCart = () => {
-        let currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const addToCart = (product) => {
+        dispatch(addCart(product))
+        // let currentCart = JSON.parse(localStorage.getItem('cart')) || [];
         
         
 
@@ -159,7 +164,7 @@ const ProductDetail = ({ setCartItems }) => {
                     <div className="flex py-4 space-x-4">
                         
                         <Link to="/Cart">
-                            <button type="button" className="h-14 px-6 py-2 font-semibold rounded-xl text-white zamaBtn" onClick={addToCart}> Add to Cart ({cart.length})</button>
+                            <button type="button" className="h-14 px-6 py-2 font-semibold rounded-xl text-white zamaBtn" onClick={()=> addToCart(productdetails)}> Add to Cart</button>
                         </Link>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaMinus, FaPlus, FaTimes } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 const Cart = () => {
     
@@ -10,6 +11,15 @@ const Cart = () => {
     };
 
     const [cartItems, setCartItems] = useState(getStoredCartItems);
+
+    // --------------------------------------------
+
+    const { cart } = useSelector((state)=> state.cartSlice )
+    
+    
+
+    // ----------------------------------------------
+
 
     
     useEffect(() => {   
@@ -71,50 +81,55 @@ const Cart = () => {
     };
 
     return (
-        <div className="container mt-40">
-            <h2 className='text-lg font-bold'>Shopping Cart</h2>
-            <table className="table table-bordered">
+        <div className="container mx-auto px-4 lg:px-20 mt-40">
+        <h2 className="text-lg font-bold mb-6 text-center lg:text-left">Shopping Cart</h2>
+        <div className="overflow-x-auto">
+            <table className="table-auto w-full border-collapse border border-gray-200">
                 <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Remove</th>
+                    <tr className="bg-gray-100">
+                        <th className="border border-gray-200 px-4 py-2 text-left">Image</th>
+                        <th className="border border-gray-200 px-4 py-2 text-left">Product</th>
+                        <th className="border border-gray-200 px-4 py-2 text-left">Price</th>
+                        <th className="border border-gray-200 px-4 py-2 text-left">Quantity</th>
+                        <th className="border border-gray-200 px-4 py-2 text-left">Total</th>
+                        <th className="border border-gray-200 px-4 py-2 text-left">Remove</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {cartItems.map(item => (
-                        <tr key={item.id}>
-                            <td>
-                                <img src={item.image} alt={item.title} className="img-fluid" style={{ width: '100px' }} />
+                    {cart.map((item) => (
+                        <tr key={item.id} className="hover:bg-gray-50">
+                            <td className="border border-gray-200 px-4 py-2">
+                                <img
+                                    src={item.imageUrl}
+                                    alt={item.title}
+                                    className="w-20 h-20 object-cover"
+                                />
                             </td>
-                            <td>{item.title}</td>
-                            <td>Rs. {item.price}</td>
-                            <td className="d-flex align-items-center">
+                            <td className="border border-gray-200 px-4 py-2">{item.title}</td>
+                            <td className="border border-gray-200 px-4 py-2">Rs. {item.price}</td>
+                            <td className="px-4 py-2 flex  items-center h-32 space-x-2">
                                 <button
-                                    className="btn btn-warning btn-sm rounded-circle p-1"
+                                    className="bg-yellow-400 hover:bg-yellow-500   text-white font-bold py-1 px-2 rounded-full"
                                     onClick={() => decreaseQuantity(item.id)}
                                     aria-label="Decrease quantity"
-                                    style={{ width: '30px', height: '30px', padding: '5px', fontSize: '14px' }}
                                 >
                                     <FaMinus />
                                 </button>
-                                <span className="mx-2">{item.quantity}</span>
+                                <span>{item.quantity}</span>
                                 <button
-                                    className="btn btn-success btn-sm rounded-circle p-1"
+                                    className="bg-green-400 hover:bg-green-500 text-white font-bold py-1 px-2 rounded-full"
                                     onClick={() => increaseQuantity(item.id)}
                                     aria-label="Increase quantity"
-                                    style={{ width: '30px', height: '30px', padding: '5px', fontSize: '14px' }}
                                 >
                                     <FaPlus />
                                 </button>
                             </td>
-                            <td>Rs. {item.price * item.quantity}</td>
-                            <td>
+                            <td className="border border-gray-200 bg-black px-4 py-2">
+                                Rs. {item.price * item.quantity}
+                            </td>
+                            <td className="border border-gray-200 px-4 py-2">
                                 <button
-                                    className="btn btn-danger btn-sm"
+                                    className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded"
                                     onClick={() => removeProduct(item.id)}
                                     aria-label="Remove product"
                                 >
@@ -122,25 +137,23 @@ const Cart = () => {
                                 </button>
                             </td>
                         </tr>
-                        
                     ))}
                 </tbody>
             </table>
-
-            <div className="cart-footer d-flex justify-content-between align-items-center">
-               
-                <div className="total border-top pt-2">
-                    <h4>Total: Rs. {getTotal()}</h4>
-                </div>
-
-               
-                <Link to="/checkout">
-                    <button className="btn btn-primary mt-3" style={{ position: 'relative',  right: '20px' }}>
-                        Proceed to Checkout
-                    </button>
-                </Link>
-            </div>
         </div>
+    
+        <div className="mt-6 flex flex-col lg:flex-row justify-between items-center">
+            <div className="text-lg font-bold">
+                <h4>Total: Rs. {getTotal()}</h4>
+            </div>
+            <Link to="/checkout">
+                <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4 lg:mt-0">
+                    Proceed to Checkout
+                </button>
+            </Link>
+        </div>
+    </div>
+    
     );
 };
 

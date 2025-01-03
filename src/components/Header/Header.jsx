@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaEnvelope, FaPhone, FaClock } from "react-icons/fa";
 import '../Header/styles.css';
+import { useSelector } from 'react-redux';
+
 
 const Header = ({ cartItems }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +22,10 @@ const Header = ({ cartItems }) => {
         setIsOpen(false);
     };
 
+    // ----------------------------------
+    const data =  useSelector( (store)=> store.cartSlice  )
+    console.log(data);
+    
 
     return (
         <>
@@ -104,7 +110,7 @@ const Header = ({ cartItems }) => {
                                 </div>
                             )}
                         </div>
-                        <Link to="/Contact" className="zamaLink text-white text-lg" onClick={closeMenu}>Contact Us</Link>
+                        <Link to="/ContactUs" className="zamaLink text-white text-lg" onClick={closeMenu}>Contact Us</Link>
                         <Link to="/Cart" className="zamaLink text-white text-lg relative flex items-center" onClick={closeMenu}>
                         
                             <img src="images/cart.svg" alt="Cart" className="mr-2"   />
