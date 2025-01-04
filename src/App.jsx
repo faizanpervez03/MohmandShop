@@ -64,6 +64,7 @@ import Thankyou from './Pages/Thankyou/Thankyou';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import AdminDashboard from './components/AdminDashboard/AdminDashboard';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function AppContent() {
   const [cartItems, setCartItems] = useState(
@@ -85,6 +86,7 @@ function AppContent() {
     <>
       {shouldShowHeaderFooter && <Header cartItems={cartItems} />}
       <Routes>
+        
         <Route path='/' element={<Home />} />
         <Route path='/About' element={<About />} />
         <Route path='/Shop' element={<Shop />} />
@@ -103,6 +105,7 @@ function AppContent() {
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <AppContent />
     </BrowserRouter>
   );

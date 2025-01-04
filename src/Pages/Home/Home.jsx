@@ -129,7 +129,7 @@ function Home() {
               ) : (
                 <h1
                   style={{ color: "#208f89" }}
-                  className="w-96 text-lg font-bold bg-red-200 border border-red-400 rounded-md p-4 shadow-md  "
+                  className="lg:w-96 md:w-96 text-lg font-bold bg-red-200 border border-red-400 rounded-md p-4 shadow-md  "
                 >
                   No Products Available
                 </h1>
