@@ -23,8 +23,8 @@ const Header = ({ cartItems }) => {
     };
 
     // ----------------------------------
-    const data =  useSelector( (store)=> store.cartSlice  )
-    console.log(data);
+    const {cart} =  useSelector( (store)=> store.cartSlice  )
+    console.log(cart);
     
 
     return (
@@ -70,11 +70,11 @@ const Header = ({ cartItems }) => {
                         <Link to="/ContactUs" className="zamaLink text-white text-lg">Contact Us</Link>
                         <Link to="/Cart" className="zamaLink text-white text-lg relative">
                             <img src="images/cart.svg" alt="Cart" />
-                            {cartItems > 0 && (
+                            
                                 <span className="absolute top-0 right-0 transform translate-x-2 -translate-y-2 bg-red-600 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
-                                    {cartItems}
+                                    {cart.length}
                                 </span>
-                            )}
+                            
                         </Link>
                     </div>
                     <div className="md:hidden">

@@ -65,6 +65,7 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import AdminDashboard from './components/AdminDashboard/AdminDashboard';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import  { Toaster } from 'react-hot-toast';
 
 function AppContent() {
   const [cartItems, setCartItems] = useState(
@@ -98,6 +99,7 @@ function AppContent() {
         <Route path='/admindashboard' element={<AdminDashboard />} />
       </Routes>
       {shouldShowHeaderFooter && <Footer />}
+
     </>
   );
 }
@@ -107,6 +109,7 @@ function App() {
     <BrowserRouter>
     <ScrollToTop />
       <AppContent />
+    <Toaster />  
     </BrowserRouter>
   );
 }
