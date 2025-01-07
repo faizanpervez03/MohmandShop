@@ -116,7 +116,7 @@ const Header = ({ cartItems }) => {
                             <img src="images/cart.svg" alt="Cart" className="mr-2"   />
                             {cartItems > 0 && (
                                 <span className="bg-red-600 text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
-                                    {cartItems}
+                                    {cart.length}
                                 </span>
                             )}
                         </Link>
