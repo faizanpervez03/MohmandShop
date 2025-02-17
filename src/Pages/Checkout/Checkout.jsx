@@ -3,7 +3,11 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 
+
 const Checkout = () => {
+
+  const { cart } = useSelector((state) => state.cartSlice);
+
   const [orderData, setOrderData] = useState({
     user: {
       userId: 1,
@@ -13,17 +17,7 @@ const Checkout = () => {
       city: "",
       phone: "",
     },
-    products: [
-     {
-        productId: 1,
-        quantity: 4
-     },
-     {
-        productId: 2,
-        quantity: 4  
-
-     }
-    ]
+    products: cart
   });
 
 
@@ -47,7 +41,7 @@ const Checkout = () => {
 
 
   // ---------------------------------------------------------
-  const { cart } = useSelector((state) => state.cartSlice);
+  
 
   const getTotal = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 300);
@@ -85,7 +79,7 @@ const Checkout = () => {
                       required
                       class="form-control"
                       id="c_fname"
-                      name="c_fname"
+                      name="firstName"
                       value={orderData.user.firstName}
                       onChange={handInputChange}
                     />
@@ -99,7 +93,7 @@ const Checkout = () => {
                       required
                       class="form-control"
                       id="c_lname"
-                      name="c_lname"
+                      name="lastName"
                       value={orderData.user.lastName}
                       onChange={handInputChange}
                     />
@@ -116,7 +110,7 @@ const Checkout = () => {
                       required
                       className="form-control"
                       id="c_address"
-                      name="c_address"
+                      name="address"
                       placeholder="Street address"
                       value={orderData.user.address}
                       onChange={handInputChange}
@@ -133,7 +127,7 @@ const Checkout = () => {
                       type="text"
                       class="form-control"
                       id="c_state_country"
-                      name="c_state_country"
+                      name="city"
                       value={orderData.user.city}
                       onChange={handInputChange}
                     />
@@ -172,7 +166,7 @@ const Checkout = () => {
                       required
                       class="form-control"
                       id="c_phone"
-                      name="c_phone"
+                      name="phone"
                       placeholder="Phone Number"
                       value={orderData.user.phone}
                       onChange={handInputChange}
