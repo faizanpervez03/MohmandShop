@@ -10,9 +10,13 @@ const Wrapper = ({ children }) => {
       setSide('left-0')
     }
 
+    const closeSidebar = () => {
+      setSide('-left-64')
+    }
+
   return (
     <>
-      <Sidebar side={side} />
+      <Sidebar side={side} closeSidebar={closeSidebar} />
       <AdminNav openSidebar={openSidebar} />
 
       <section className="ml-0 p-12 sm:ml-64 sm:pl-72  bg-[#103a38] text-white min-h-screen pt-28 ">

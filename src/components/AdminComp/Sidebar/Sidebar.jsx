@@ -5,14 +5,11 @@ const Sidebar = ({ side, closeSidebar }) => {
     <div
       className={`fixed top-0 ${side} sm:left-0 w-64 h-screen bg-[#208f89] z-10 transition-all`}
     >
-      <i
-        className="bi bi-x-lg absolute top-4 right-4 sm:hidden block cursor-pointer text-lg"
-        onClick={closeSidebar}
-      ></i>
-      <IoMdClose className="text-white absolute top-4 right-4 sm:hidden block cursor-pointer text-2xl" />
+      
+      <IoMdClose className="text-white absolute top-6 right-4 sm:hidden block cursor-pointer text-2xl" onClick={closeSidebar} />
       <div className=" p-4">
       <Link to="/">
-             <span className="text-white font-bold text-2xl">Mohmand Shop.</span>
+             <span className="text-white font-bold text-lg">Mohmand Shop.</span>
           </Link>
       </div>
       <ul className="mt-4">

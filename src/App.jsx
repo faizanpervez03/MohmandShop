@@ -16,6 +16,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import  { Toaster } from 'react-hot-toast';
 import Product from './Pages/AdminDashboard/Product';
 import Order from './Pages/AdminDashboard/Order';
+import CreateProduct from './Pages/AdminDashboard/CreateProduct';
 
 
 
@@ -31,7 +32,7 @@ function AppContent() {
   const location = useLocation();
 
   // Paths where Header and Footer should not be shown
-  const excludePaths = ['/admindashboard', "/admindashboard/product", "/admindashboard/order"];
+  const excludePaths = ['/admindashboard', "/admindashboard/product", "/admindashboard/order", "/admindashboard/create-product"];
 
   const shouldShowHeaderFooter = !excludePaths.includes(location.pathname);
 
@@ -55,6 +56,7 @@ function AppContent() {
         <Route path='/admindashboard'>
           <Route path='product' element={<Product/>} />
           <Route path='order' element={<Order/>} />
+          <Route path='create-product' element={ <CreateProduct /> } />
 
         </Route>
 
